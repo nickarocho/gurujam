@@ -1,0 +1,396 @@
+//-----Variables-----//
+:root {
+  //colors
+  --green-dark: #16914E;
+  --green-light: #18F687;
+  --purple-dark: #631478;
+  --purple-light: #D83AE8;
+  --blue-dark: #3706a6;
+  --blue-light: #04DDF7;
+  --yellow: #FFBD01;
+  --orange: #FF6200;
+}
+
+//----- Fonts -----//
+@font-face {
+  font-family: 'GT-Pressura-Bold';
+  src: url('https://static1.squarespace.com/static/5c13bc22e2ccd1a492c0cfe1/t/5c1abd686d2a73e0bad06fba/1545256296236/GT-Pressura-Bold.otf');
+}
+h1, h2, h3, button, .sqs-block-button-element {
+  font-family: 'GT-Pressura-Bold' !important;
+}
+
+* {
+  -webkit-hyphens: manual !important;
+       -moz-hyphens: manual !important;
+        -ms-hyphens: manual !important;
+            hyphens: manual !important;
+}
+
+//-----HEADER-----//
+.Header {
+  position: relative;
+  width: 100vw;
+}
+
+.Header--top {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: 10;
+}
+
+.Mobile-bar--top {
+  position: absolute;
+  z-index: 999;
+}
+
+//-----HERO SLIDESHOW-----//
+.Index-gallery-item-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & .Index-gallery-item-content {
+    margin-top: -15em!important;
+    @media only screen and (max-width: 500px) {
+      margin-top: -21em!important;
+    }
+  }
+  
+  //slideshow headlines
+  h2, p {
+    font-family: 'GT-Pressura-Bold';
+    font-size: 120px;
+    padding: 0!important;
+    line-height: 1em!important;
+    text-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    @media only screen and (max-width: 700px) {
+      font-size: 6em;
+    }
+    @media only screen and (max-width: 500px) {
+      font-size: 6.5em;
+    }
+    @media only screen and (max-width: 326px) {
+      font-size: 5.5em;
+    }
+  }
+  h2 { //i.e. "BAKING IS"
+    padding-right: .2em!important;
+  }
+  p { // "MY JAM"
+    color: #FFBD01;
+  }
+  .Index-gallery-item-content {
+    display: flex !important;
+    align-items: center;
+    @media only screen and (max-width: 875px) {
+      flex-direction: column;
+    }
+  }
+}
+
+.Index-gallery-wrapper {
+  article {
+    &:nth-of-type(2) {
+      p {
+        color: var(--blue-light);
+      }
+    }
+    &:nth-of-type(3) {
+      p {
+        color: var(--green-light);
+      }
+    }
+    &:nth-of-type(4) {
+      p {
+        color: var(--purple-light);
+      }
+    }
+    &:nth-of-type(5) {
+      h2, p {
+        text-shadow: none!important;
+        text-transform: uppercase!important;
+      }
+      .Index-gallery-item-content {
+        flex-direction: column;
+      }
+      p {
+        color: var(--blue-dark);
+        font-size: 3em;
+        text-transform: none;
+      }
+    }
+  }
+}
+
+//gallery indicator dots
+.Index-gallery-indicators {
+  margin: 1em 0;
+  &-item.active span {
+    background-color: var(--purple-light)!important;
+  }
+}
+
+//-----HERO EMAIL SIGNUP-----//
+#hero {
+  width: 100vw;
+  z-index: 20;
+  background: transparent;
+  min-height: 250px;
+  
+  //newsletter signup
+  .newsletter-block {
+    .newsletter-form-wrapper--layoutStack .newsletter-form-field-wrapper {
+      width: 300px;
+      text-align: center;
+    }
+    .newsletter-form-footnote p {
+      font-size: 1.4em!important;
+      color: white;
+      margin: 0;
+      //text shadow below in case against a bright background
+      //text-shadow: 1px 1px 8px rgba(0,0,0,0.1);
+    }
+  }
+}
+@media screen and (max-width: 320px) {
+ .newsletter-block .newsletter-form-fields-wrapper {
+    display: flex;
+    justify-content: center;
+  } 
+}
+
+//ALL email signup inputs
+.newsletter-block .newsletter-form-wrapper--layoutStack .newsletter-form-field-wrapper {
+  max-width: 310px;
+  width: 310px;
+}
+.newsletter-block .newsletter-form-field-element {
+  padding: .6em 0 .6em 21%;
+}
+//sign up button
+.newsletter-block .newsletter-form-button {
+  font-size: 18px;
+  padding: .9em 2.4em !important;
+}
+
+//-----SECTION - DEFINITIONS-----//
+#guru-jam {
+  .sqs-row:nth-of-type(1) {
+    display: flex;
+  }
+  padding-top: 35px;
+  @media screen and (max-width: 640px) {
+    padding-top: 20px;
+  }
+  h1.definition {
+    text-align: center;
+    font-size: 2.5em;
+    line-height: 0em;
+    padding-top: 1em;
+  }
+  h1.guru {
+    color: var(--blue-dark);
+  }
+  h1.jam {
+    color: var(--purple-light);
+  }
+  span.noun {
+    font-size: .4em;
+    font-family: 'Georgia';
+    text-transform: lowercase;
+    letter-spacing: 0;
+    font-weight: 200;
+    @media screen and (max-width: 495px) {
+      display: block;
+      margin: 2em 0 -1em;
+    }
+  }
+  p {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}
+
+//-----SECTION - ABOUT-ICONS-----//
+#about-icons {
+  background-color: var(--blue-dark);
+  h1 {
+    color: white;
+    font-size: 2.3em;
+    padding-top: 1em;
+  }
+  //icons
+  .sqs-row:nth-of-type(2) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    @media only screen and (max-width: 700px) {
+        flex-direction: column;
+      }
+    & > div {
+      width: 230px!important;
+      text-align: center;
+      color: white;
+      
+      img {
+        max-width: 200px;
+        max-height: 200px;
+      }
+    }
+  }
+  .sqs-gallery-block-grid .slide .margin-wrapper a.image-slide-anchor {
+    text-align: center;
+    padding-bottom: 90%;
+  }
+  
+  //icon text
+  .sqs-gallery-block-grid.sqs-gallery-block-meta-only-title .margin-wrapper .image-slide-title {
+    white-space: inherit;
+    color: white;
+    text-overflow: inherit;
+  }
+  
+  .sqs-gallery-block-grid > div {
+    @media only screen and (max-width: 640px) {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center; 
+    }
+  }
+  
+  //half-circle
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border: 25px solid white;
+    border-radius: 50%;
+    top: -30px;
+    left: 50%;
+    margin-left: -25px;
+  }
+}
+
+//-----SECTION - JOIN THE MVMT-----//
+#join-the-movement {
+  h1 {
+    color: var(--blue-dark);
+    font-size: 2.3em;
+    padding-top: 1em;
+  }
+  
+  p {
+    max-width: 1000px;
+    margin: 0 auto;
+    //-webkit-column-count: 2;
+    //-moz-column-count: 2;
+    //column-count: 2;
+    //-webkit-column-gap: 40px;
+    //-moz-column-gap: 40px;
+    //column-gap: 40px;
+    
+    @media only screen and (max-width: 600px) {
+      //-webkit-column-count: 1;
+      //-moz-column-count: 1;
+      //column-count: 1;
+    }
+  }
+  
+  //half-circle
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border: 25px solid var(--blue-dark);
+    border-radius: 50%;
+    top: -30px;
+    left: 50%;
+    margin-left: -25px;
+  }
+}
+
+//-----SECTION - EMAIL SIGNUP 2-----//
+#email-signup {
+  background: var(--purple-light);
+  
+  .newsletter-form-body {
+    padding-top: 1em;
+  }
+  .newsletter-block .newsletter-form-button {
+    background: var(--blue-dark);
+  }
+  
+  .newsletter-block .newsletter-form-footnote p:last-child {
+    color: white;
+    font-size: 1.2em !important;
+    margin-top: 0;
+  }
+  
+  //half-circle
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border: 25px solid white;
+    border-radius: 50%;
+    top: -30px;
+    left: 50%;
+    margin-left: -25px;
+  }
+}
+
+//-----FOOTER-----//
+footer.Footer {
+  .social-icons-color-standard.social-icons-style-solid .sqs-svg-icon--wrapper .sqs-use--mask {
+    
+  }
+  .social-icons-size-extra-large:not(.social-icons-style-regular) .sqs-svg-icon--wrapper {
+    width: 90px;
+    height: 40px;
+    border-radius: 3px;
+  }
+  .sqs-svg-icon--list {
+    a.sqs-svg-icon--wrapper {
+      &.email {
+        background-color: #6ACDEC;
+      }
+    }
+  }
+  //overriding earlier styles
+  .sqs-layout:not(.sqs-editing)>.sqs-row:first-child>[class*=sqs-col]:first-child>.sqs-block:last-child {
+    padding-bottom: 0;
+  }
+  .sqs-block-html blockquote, .sqs-block-markdown blockquote {
+    padding-left: 0;
+  }
+}
+.tweak-footer-layout-stacked .Footer-blocks--top {
+  height: 0!important;
+  padding-top: 0!important;
+}
+
+//-----NEARLY THERE PAGE-----//
+#confirm-email {
+  padding-top: 5em;
+}
+
+//-----SITEWIDE-----//
+button:not(.Index-gallery-indicators-item), .sqs-svg-icon--list > a, .Header-branding-logo {
+  transition: all .2s!important;
+  &:hover {
+    transform: translateY(-3px); 
+  }
+  &:active {
+    transform: translateY(0px);
+  }
+}
+
+//medium buttons
+.sqs-block-button .sqs-block-button-element--medium {
+  letter-spacing: 0;
+  padding: 11px 34px;
+}
